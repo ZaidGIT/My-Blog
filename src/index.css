@@ -1,0 +1,263 @@
+/* ========== BASE THEME ========== */
+:root {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Dark Mode Defaults */
+  --color-bg: #1e1e2f;
+  --color-text: #ffffff;
+  --color-date: #cddaff;
+  --color-primary: #4a90e2;
+  --color-secondary: #d4af37;
+  --color-content: #a7a7b5;
+
+  color-scheme: dark;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== LIGHT THEME ========== */
+[data-theme='light'] {
+  --color-bg: #f2f2f6;
+  --color-text: #2c2c38;
+  --color-date: #4b4b4b;
+  --color-primary: #3b6ea5;
+  --color-secondary: #b8932b;
+  --color-content: #818181;
+  color-scheme: light;
+}
+
+/* ========== DARK THEME ========== */
+[data-theme='dark'] {
+  --color-bg: #1e1e2f;
+  --color-text: #ffffff;
+  --color-date: #cddaff;
+  --color-primary: #4a90e2;
+  --color-secondary: #d4af37;
+  --color-content: #a7a7b5;
+  
+  color-scheme: dark;
+}
+
+/* ========== GLOBAL STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--color-secondary);
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  font-family: inherit;
+}
+button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
+}
+
+/* ========== Under Development Page ========== */
+.under-development-container {
+  text-align: center;
+  max-width: 600px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-primary);
+  background-color: rgba(30, 30, 47, 0.9);
+}
+
+[data-theme='light'] .under-development-container {
+  background-color: rgba(242, 242, 246, 0.9);
+  color: var(--color-text);
+}
+
+.under-development-back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.button-hover {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-bg) !important;
+}
+
+.corner-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 60px 60px 0;
+  border-color: transparent var(--color-primary) transparent transparent;
+  z-index: 1;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.under-development-icon {
+  font-size: 4.5rem;
+  color: var(--color-secondary);
+  animation: pulse 2s infinite;
+}
+
+.under-development-title {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.under-development-subtitle {
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* ========== Progress Bar ========== */
+.progress-container {
+  margin: 2rem 0;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.progress-bar {
+  height: 12px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.15); /* background of unfilled area */
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 72%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-primary) 100%
+  );
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease-in-out infinite;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Subtle gradient motion */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* ========== Grid Features ========== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.feature-icon {
+  margin-right: 0.8rem;
+  color: var(--color-secondary);
+}
+
+.contact-text {
+  margin-top: 1.5rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.contact-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ========== Animations ========== */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
