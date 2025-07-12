@@ -8,7 +8,7 @@
   --color-bg: #1e1e2f;
   --color-text: #ffffff;
   --color-date: #cddaff;
-  --color-primary: #4a90e2;
+  --color-primary: #2a7ddb;
   --color-secondary: #d4af37;
   --color-content: #a7a7b5;
 
@@ -26,10 +26,13 @@
   --color-bg: #f2f2f6;
   --color-text: #2c2c38;
   --color-date: #4b4b4b;
-  --color-primary: #3b6ea5;
+  --color-primary: #20578d;
   --color-secondary: #b8932b;
   --color-content: #818181;
   color-scheme: light;
+  
+  scrollbar-color: var(--color-primary) rgba(0,0,0,0.2);
+  scrollbar-width: thin;
 }
 
 /* ========== DARK THEME ========== */
@@ -37,11 +40,13 @@
   --color-bg: #1e1e2f;
   --color-text: #ffffff;
   --color-date: #cddaff;
-  --color-primary: #4a90e2;
+  --color-primary: #1E90FF;
   --color-secondary: #d4af37;
   --color-content: #a7a7b5;
-  
   color-scheme: dark;
+  
+  scrollbar-color: var(--color-primary) rgba(0,0,0,0.2);
+  scrollbar-width: thin;
 }
 
 /* ========== GLOBAL STYLES ========== */
@@ -189,7 +194,7 @@ button:hover {
 .progress-bar {
   height: 12px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.15); /* background of unfilled area */
+  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -208,7 +213,24 @@ button:hover {
   border-radius: 6px 0 0 6px;
 }
 
-/* Subtle gradient motion */
+/* navbar */
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+/* navbar */
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -220,7 +242,6 @@ button:hover {
     background-position: 0% 50%;
   }
 }
-
 
 /* ========== Grid Features ========== */
 .features-grid {
@@ -261,3 +282,48 @@ button:hover {
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
+
+/* ========== Global Scrollbar Styles ========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) rgba(0,0,0,0.2);
+}
+
+/* main container */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 30px 350px;
+  box-sizing: border-box;
+}
+.my_posts h1 {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+  color: var(--color-text);
+  font-family: 'montserrat', sans-serif;
+}
+
+/* main container */
