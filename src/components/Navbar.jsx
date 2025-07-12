@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {LuSun, LuMoon} from "react-icons/lu";
-
+import { LuSun, LuMoon, LuMenu, LuX } from "react-icons/lu";
+import '../assets/_common/navbar.css'
 
 const Navbar = () => {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "dark";
   });
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -16,63 +18,29 @@ const Navbar = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
   return (
-<nav style={styles.navbar}>
-  <div style={styles.rightContainer}>
-    <ul style={styles.navLinks}>
-      <li><a href="/" style={styles.link}>Home</a></li>
-      <li><a href="/archives" style={styles.link}>Archives</a></li>
-      <li><a href="/tags" style={styles.link}>Tags</a></li>
-      <li><a href="/links" style={styles.link}>Links</a></li>
-      <li><a href="/about" style={styles.link}>About</a></li>
-    </ul>
-    <div onClick={toggleTheme} style={styles.icon}>
-      {theme === 'dark' ? <LuSun size={20} /> : <LuMoon size={20} />}
-    </div>
-  </div>
-</nav>
-
+    <nav className="navbar">
+      <div className="right-container">
+        <div className="burger" onClick={toggleMenu}>
+          {menuOpen ? <LuX size={24} /> : <LuMenu size={24} />}
+        </div>
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <li><a href="/">Home</a></li>
+          <li><a href="/archives">Archives</a></li>
+          <li><a href="/tags">Tags</a></li>
+          <li><a href="/links">Links</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <div onClick={toggleTheme} className="theme-icon">
+          {theme === "dark" ? <LuSun size={20} /> : <LuMoon size={20} />}
+        </div>
+      </div>
+    </nav>
   );
-};
-
-const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    padding: "1rem 2rem",
-    backgroundColor: "var(--color-bg)",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-    border: "none",
-  },
-  rightContainer: {
-    display: "flex",
-    alignItems: "center",
-    gap: "1.5rem",
-  },
-  navLinks: {
-    display: "flex",
-    gap: "1.5rem",
-    listStyle: "none",
-    margin: 0,
-    padding: 0,
-  },
-  link: {
-    cursor: "pointer",
-    color: "var(--color-text)",
-    textDecoration: "none",
-    fontSize: "1.1rem",
-    position: "relative",
-    transition: "color 0.3s ease",
-  },  
-  icon: {
-    color: "var(--color-text)",
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center",
-  },
 };
 
 export default Navbar;
