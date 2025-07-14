@@ -1,0 +1,17 @@
+.blog-container {
+    padding: 50px 200px;
+}
+
+.blog-breadcrumbs {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.breadcrumb-current {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.blog-breadcrumbs .MuiBreadcrumbs-separator {
+  color: var(--color-primary);
+  font-weight: 500;
+}

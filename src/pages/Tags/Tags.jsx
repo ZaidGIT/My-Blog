@@ -1,57 +1,49 @@
-import React from 'react';
-import './tags.css';
+import React from "react";
+import "./tags.css";
+import Navbar from "../../components/Navbar";
+
+const tags = [
+  { name: "Apple", power: 5 },
+  { name: "React.js", power: 4 },
+  { name: "AI", power: 1 },
+  { name: "Personal Projects", power: 5 },
+  { name: "JavaScript", power: 8 },
+  { name: "Python", power: 7 },
+  { name: "C++", power: 3 },
+  { name: "Data Science", power: 6 },
+  { name: "Git", power: 2 },
+  { name: "Node.js", power: 2 },
+  { name: "Machine Learning", power: 1 },
+  { name: "GitHub", power: 3 },
+  { name: "Databases", power: 4 },
+  { name: "Cv", power: 4 },
+  { name: "Golang", power: 4 },
+  { name: "Blender", power: 4 },
+  { name: "Components Library", power: 3 },
+];
 
 const Tags = () => {
   return (
-    <div className='container'>
-      <div className='my_posts'>
-        <h1>Tags :</h1>
-      </div>
-      <div className='links-container'>
+    <>
+      <div className="container">
+        <div className="my_posts">
+          <h1>Tags :</h1>
+        </div>
+        <div className="links-container">
         <div className="links">
-          <div className="tag-item">
-            <a href="#">Apple<sup className="tag-power">5</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">C++<sup className="tag-power">3</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">React.js<sup className="tag-power">4</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Git<sup className="tag-power">2</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Data Science<sup className="tag-power">6</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Python<sup className="tag-power">7</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Node.js<sup className="tag-power">2</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Machine Learning<sup className="tag-power">1</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">GitHub<sup className="tag-power">3</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Databases<sup className="tag-power">4</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">CV<sup className="tag-power">4</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Golang<sup className="tag-power">4</sup></a>
-          </div>
-          <div className="tag-item">
-            <a href="#">Blender<sup className="tag-power">4</sup></a>
-          </div>
+          {tags.map((tag, index) => (
+            <div className="tag-item" key={index}>
+              <a href="#">
+                {tag.name}
+                <sup className="tag-power">{tag.power}</sup>
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </div>
-  )
-}
+  </>
+  );
+};
 
 export default Tags;

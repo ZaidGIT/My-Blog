@@ -88,10 +88,10 @@ const About = () => {
   <div className="links-list">
     <div className="link-row">
       <span>LinkedIn</span>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">@Zaid</a>
+      <a href="https://www.linkedin.com/in/zaid-madari-87635726a/" target="_blank" rel="noopener noreferrer">@Zaid</a>
       <span className="separator">|</span>
       <span>GitHub</span>
-      <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">@Zaid</a>
+      <a href="https://github.com/ZaidGIT" target="_blank" rel="noopener noreferrer">@Zaid</a>
     </div>
     <div className="link-row">
       <span>Twitter</span>

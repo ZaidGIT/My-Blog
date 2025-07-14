@@ -7,6 +7,8 @@ import Archives from "./pages/Archives/Archives"
 import Tags from "./pages/Tags/Tags";
 import Links from "./pages/Links/Links";
 import About from "./pages/About/About";
+import AiAsADeveloper from './blogs/AiAsADeveloper';
+import BeginnersReact from './blogs/BeginnersReact';
 
 function App() {
   return (
@@ -19,6 +21,12 @@ function App() {
       <Route path='/links' element = {<Links/>}/>
       <Route path='/about' element = {<About/>}/>
       <Route path='*' element = {<Home/>}/>
+
+      {/* blogroutes */}
+      <Route path='/ai-as-a-developer' element={<AiAsADeveloper />} />
+      <Route path='/beginners-react' element={<BeginnersReact />} />
+      {/* blogroutes */}
+
       </Routes>
     </>
   );

@@ -11,6 +11,8 @@
   --color-primary: #2a7ddb;
   --color-secondary: #d4af37;
   --color-content: #a7a7b5;
+  --color-hover: rgba(255, 255, 255, 0.05);
+  --color-breadcrumbs: #ffffff;
 
   color-scheme: dark;
   color: var(--color-text);
@@ -29,6 +31,9 @@
   --color-primary: #20578d;
   --color-secondary: #b8932b;
   --color-content: #818181;
+  --color-hover: #7ba9d8;
+  --color-breadcrumbs: #000000;
+
   color-scheme: light;
   
   scrollbar-color: var(--color-primary) rgba(0,0,0,0.2);
@@ -43,6 +48,9 @@
   --color-primary: #1E90FF;
   --color-secondary: #d4af37;
   --color-content: #a7a7b5;
+  --color-hover: rgba(255, 255, 255, 0.05);
+  --color-breadcrumbs: #ffffff;
+
   color-scheme: dark;
   
   scrollbar-color: var(--color-primary) rgba(0,0,0,0.2);
@@ -316,7 +324,7 @@ nav a:hover::after {
   height: 100vh;
   font-family: Arial, sans-serif;
   color: #333;
-  padding: 30px 350px;
+  padding: 50px 200px;
   box-sizing: border-box;
 }
 .my_posts h1 {
