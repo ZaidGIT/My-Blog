@@ -15,3 +15,55 @@
   color: var(--color-primary);
   font-weight: 500;
 }
+
+/* ai as a developer */
+
+.blog-title h1 {
+  color: var(--color-text);
+  padding-bottom: 20px;
+}
+
+.blog-content {
+  color: var(--color-content);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.blog-mid {
+  margin: 40px 0;
+}
+
+.blog-mid h3 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.blog-mid ul {
+  list-style-type: disc;
+  padding-left: 24px;
+  line-height: 1.8;
+}
+
+.blog-mid li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+
+.personal {
+  margin: 40px 0;
+}
+.alternatives {
+  margin: 40px 0;
+}
+
+.alternatives ul {
+  margin: 20px 0;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+
+/* ai as a developer */
