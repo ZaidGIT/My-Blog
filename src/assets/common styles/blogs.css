@@ -1,6 +1,8 @@
 .blog-container {
   padding: 50px 250px;
   /* text-align: justify; */
+  color: var(--color-content);
+
 }
 
 .article {
@@ -66,7 +68,6 @@
 
 
 .blog-content {
-  color: var(--color-content);
   font-size: 1rem;
   line-height: 1.6;
   margin-top: 20px;
@@ -129,3 +130,76 @@
 
 
 /* ai as a developer */
+
+
+/* react beginner */
+
+.headings h2 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+}
+
+.headings h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 13%;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  
+}
+
+.code-block pre {
+  background-color: var(--color-code-bg);
+  color: #ffffff;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  margin-left: -5px;
+
+}
+
+.code-block code {
+  font-family: "Fira Code", monospace;
+  white-space: pre-wrap;
+}
+
+.code-wrapper {
+  position: relative;
+}
+
+.copy-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;       /* No background ever */
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.copy-icon:hover {
+  opacity: 1;
+  background: none;       /* Explicitly prevent background on hover */
+}
+
+
+
+/* react beginner */

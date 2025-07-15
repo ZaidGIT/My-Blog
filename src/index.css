@@ -10,7 +10,7 @@
   --color-date: #cddaff;
   --color-primary: #2a7ddb;
   --color-secondary: #d4af37;
-  --color-content: #a7a7b5;
+  --color-content: #c9d1d9;
   --color-hover: rgba(255, 255, 255, 0.05);
   --color-breadcrumbs: #ffffff;
   --color-toast-bg: #f2f2f6;
@@ -31,11 +31,12 @@
   --color-date: #4b4b4b;
   --color-primary: #20578d;
   --color-secondary: #b8932b;
-  --color-content: #818181;
+  --color-content: #616161;
   --color-hover: #7ba9d8;
   --color-breadcrumbs: #000000;
   --color-toast-bg: #1e1e2f;
   --color-toast-text: #ffffff;
+  --color-code-bg: rgba(0, 0, 0, 0.8);
 
   color-scheme: light;
   
@@ -50,11 +51,12 @@
   --color-date: #cddaff;
   --color-primary: #1E90FF;
   --color-secondary: #d4af37;
-  --color-content: #a7a7b5;
+  --color-content: #c9d1d9;
   --color-hover: rgba(255, 255, 255, 0.05);
   --color-breadcrumbs: #ffffff;
   --color-toast-bg: #f2f2f6;
   --color-toast-text: #000000;
+  --color-code-bg: rgba(255, 255, 255, 0.05);
 
   color-scheme: dark;
   
@@ -110,7 +112,6 @@ button {
   font-family: inherit;
 }
 button:hover {
-  background-color: var(--color-secondary);
   color: var(--color-bg);
 }
 
