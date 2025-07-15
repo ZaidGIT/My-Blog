@@ -14,7 +14,8 @@ const Home = () => {
     {
       title: "How to Start Building with AI as a Developer",
       date: "Mon, Jan 20, 2025",
-      content: `Building with AI starts by understanding how models learn from data. At the core, you're working with algorithms that identify patterns and make predictions—whether it's classifying images, generating text, or analyzing trends. As a developer, the first practical step is to get comfortable with Python and libraries like NumPy, Pandas, and Scikit-learn. From there, frameworks like TensorFlow and PyTorch provide the tools to train and deploy models efficiently. This article outlines the foundational concepts, tools, and workflows developers need to build real-world AI applications, with a focus on clarity, reproducibility, and best practices in modern development environments.`,
+      content: `Tired of Googling the same error 100 times? Imagine having an AI pair programmer that can help you find solutions faster, understand complex code, and even write code snippets for you.
+I was once in your shoes, spending hours searching for answers on Stack Overflow and GitHub. Until 2 years ago[2022], then I discovered the power of AI tools and everything changed.`,
       href: '/ai-as-a-developer'
     },
     {

@@ -10,10 +10,13 @@ import About from "./pages/About/About";
 import AiAsADeveloper from './blogs/AiAsADeveloper';
 import BeginnersReact from './blogs/BeginnersReact';
 
+import { Toaster } from 'react-hot-toast'; 
+
 function App() {
   return (
     <>
     <Navbar/>
+    <Toaster position="bottom-right" reverseOrder={false} />
     <Routes>
       <Route path='/' element = {<Home/>}/>
       <Route path='/archives' element = {<Archives/>}/>
