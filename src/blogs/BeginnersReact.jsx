@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import "../assets/common styles/blogs.css";
 import { FiCopy, FiCheck } from "react-icons/fi";
+import ReactLogo from "../assets/effects/ReactLogo.gif";
 import {
   Accordion,
   AccordionDetails,
@@ -33,21 +34,21 @@ const BeginnersReact = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // React.useEffect(() => {
-  //   if (!hasShownToast.current) {
-  //     toast("Last updated: July 15, 2025 at 11:30 UTC", {
-  //       icon: "🕒",
-  //       duration: 2000,
-  //       style: {
-  //         border: "1px solid var(--color-primary)",
-  //         color: "var(--color-toast-text)",
-  //         background: "var(--color-toast-bg)",
-  //         fontSize: "0.95rem",
-  //       },
-  //     });
-  //     hasShownToast.current = true;
-  //   }
-  // }, []);
+  React.useEffect(() => {
+    if (!hasShownToast.current) {
+      toast("Last updated: July 16, 2025 at 11:34:16 UTC", {
+        icon: "🕒",
+        duration: 2000,
+        style: {
+          border: "1px solid var(--color-primary)",
+          color: "var(--color-toast-text)",
+          background: "var(--color-toast-bg)",
+          fontSize: "0.95rem",
+        },
+      });
+      hasShownToast.current = true;
+    }
+  }, []);
 
   return (
     <div className="blog-container">
@@ -84,95 +85,120 @@ const BeginnersReact = () => {
           <br />
         </motion.div>
 
+        <motion.div className="" {...fadeInUp}>
+          <strong>Prerequisites:</strong>
+          <br />
+          <p>
+            Basic understanding of HTML, CSS, and JavaScript, with familiarity
+            with ES6 features like arrow functions, destructuring, and modules.
+          </p>
+          <br />
+        </motion.div>
+
         <motion.div className="headings" {...fadeInUp}>
           <h2>01. Creating a React App</h2>
         </motion.div>
-        <motion.div className="code-block" {...fadeInUp}>
-          <p>
-            1. Using{" "}
-            <a
-              href="https://vite.dev/guide/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="vite-link"
-            >
-              Vite
-            </a>{" "}
-            (Fast & Modern – Recommended):
-          </p>
-
-          <div className="code-wrapper">
-            <button
-              className="copy-icon"
-              onClick={() => handleCopy(ViteCode)}
-              aria-label="Copy"
-            >
-              {copied ? <FiCheck size={16} /> : <FiCopy size={16} />}
-            </button>
-            <pre>
-              <code>{ViteCode}</code>
-            </pre>
-          </div>
-
-          {/* MUI Accordion inserted below */}
-          <Accordion
-            sx={{
-              mt: 2,
-              transition: "box-shadow 0.2s",
-              "&:hover": {
-                boxShadow: 6,
-                backgroundColor: "none",
-              },
+        <p>
+          To create a new React app, you can use either Vite or Create React
+          App.
+        </p>
+        <p>
+          <div
+            style={{
+              paddingTop: "10px",
+              // paddingBottom: "20px",
+              paddingLeft: "9px",
             }}
           >
-            <AccordionSummary
-              style={{
-                backgroundColor: "var(--color-bg)",
-                color: "var(--color-content)",
-              }}
-              expandIcon={
-                <ExpandMoreIcon style={{ color: "var(--color-content)" }} />
-              }
-            >
-              <Typography fontWeight={500}>Pros: </Typography>
-            </AccordionSummary>
-            <AccordionDetails
-              style={{
-                backgroundColor: "var(--color-bg)",
-                color: "var(--color-content)",
-              }}
-            >
-              <motion.div>
-                <ul
-                  style={{
-                    paddingLeft: "1.2rem",
-                    margin: 0,
-                    listStyleType: "none",
-                    marginLeft: "-1.2rem",
-                  }}
-                >
-                  {[
-                    "⚡ Ultra-fast dev server with native ESM",
-                    "📦 Out-of-the-box support for React and TS",
-                    "🛠️ Instant hot module replacement (HMR)",
-                    "📁 Minimal config, fast startup",
-                    "🚀 Production builds powered by Rollup",
-                  ].map((text, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -15 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1, duration: 0.4 }}
-                      viewport={{ once: true }}
-                    >
-                      {text}
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            </AccordionDetails>
-          </Accordion>
+            Vite Installation{" "}
+            <a href="https://vite.dev/guide/#scaffolding-your-first-vite-project">
+              here
+            </a>
+            <br />
+            Create React App Installation{" "}
+            <a href="https://reactjs.org/docs/create-a-new-react-app.html">
+              here
+            </a>
+          </div>
+        </p>
+
+        <motion.div className="headings" {...fadeInUp}>
+          <h2>02. Understanding Components</h2>
         </motion.div>
+        <p>
+          Components are the building blocks of a React application. They can be
+          functional or class-based, but functional components are more common
+          in modern React development.
+        </p>
+        <p>Here's a simple functional component:</p>
+        <div
+          className="code-block"
+          style={{
+            border: "1px solid var(--color-border)",
+            borderRadius: "8px",
+            margin: "12px 0",
+          }}
+        >
+          <pre>
+            <code>
+              {`const MyComponent = () => {
+  return <h1>Hello, World!</h1>;
+  };`}
+            </code>
+          </pre>
+        </div>
+        <p>
+          Refer here for more on{" "}
+          <a href="https://reactjs.org/docs/components-and-props.html">
+            Components and Props
+          </a>
+        </p>
+        <motion.div className="headings" {...fadeInUp}>
+          <h2>03. Managing State</h2>
+        </motion.div>
+        <p>
+          Refer here for{" "}
+          <a href="https://reactjs.org/docs/state-and-lifecycle.html">
+            State and Lifecycle
+          </a>
+        </p>
+
+        <motion.div
+          className="tldr-box"
+          style={{
+            margin: "20px 0",
+          }}
+          {...fadeInUp}
+        >
+          <strong>Personal Note:</strong>
+          <p>
+            It takes time to get comfortable with React's concepts, and me
+            personally I struggled with understanding state management and
+            component lifecycle.
+          </p>
+        </motion.div>
+
+        <motion.div className="download-box" {...fadeInUp}>
+          <h3>
+            <a href="/public/React_learning_Plan.pdf" download>
+              Click here
+            </a>{" "}
+            to download basic to amateur React.js practical tasks and exercises.
+          </h3>
+        </motion.div>
+        <img
+          src={ReactLogo}
+          alt="React Logo"
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            width: "60px",
+            opacity: 0.6,
+            zIndex: 1000,
+            pointerEvents: "none",
+          }}
+        />
       </motion.div>
     </div>
   );
